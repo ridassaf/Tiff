@@ -1,0 +1,7 @@
+Here is the latest version of the project. It can now either make the histograms by splitting up the bins into equal intervals in linear or log space. The log space seems to work, and gives different images, but they still have a lot of noise.
+
+Also, in regards to the question you asked about directories in TIFF files, I was curious, so according to what I could find in the documentation, each directory can have one main image, but multiple what they call subIFDs, and they have a tag to find out if/how many of those each directory has:
+	unsigned long offset;
+ 	uint16 numSubIFDs;
+   	TIFFGetField(in, TIFFTAG_SUBIFD, &numSubIFDs, &offset);
+Where that will give you the offset to the first child image, and the number of child images that specific directory has.

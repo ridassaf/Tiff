@@ -1,0 +1,3 @@
+where these tiff files came from:
+alh.tif:~gk/d/alh/2013-10-10/Chemoflux-Exposure/Pos0/WT_scan_49_num_0_YFP.tif
+ross.tif:~gk/d/ross/TEETH/Sam04/rec_HA_tube5_testHR_00880.tif

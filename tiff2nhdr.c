@@ -19,11 +19,11 @@ int main(int argc, char* argv[]) {
     char *byte_order = (char*) malloc(2 *sizeof(char));
     fread(byte_order, sizeof(char), 2, f);
     fclose(f);
-    
+
     width = (uint32*)malloc(sizeof(uint32));
     length = (uint32*)malloc(sizeof(uint32));
     depth = (short*)malloc(sizeof(short));
-    
+
     offset = (long**) malloc(sizeof(long*));
     offset[0] = (long*) malloc(sizeof(long));
     sample_format = (short*)malloc(sizeof(short));
@@ -44,7 +44,7 @@ int main(int argc, char* argv[]) {
     if (depth > 0) {
       dimensions  = 3;
     }
-    
+
     printf("Width: %d\n", *width);
     printf("Length: %d\n", *length);
     printf("Depth: %hu\n", *depth);
@@ -52,13 +52,12 @@ int main(int argc, char* argv[]) {
     printf("Byte Order: %c%c\n", byte_order[0], byte_order[1]);
     printf("Bits per sample: %d\n", bps);
     printf("Data Type: %hu\n", *sample_format);
-    
+
     FILE *output = fopen("test.txt", "w");
-    
-    
+
     fclose(output);
     TIFFClose(tif);
   }
-  
+
   return 0;
 }
